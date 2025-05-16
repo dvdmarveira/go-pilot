@@ -23,10 +23,16 @@ func (c Cliente) Apresentar() {
 }
 
 func main() {
-	p1 := Cliente{Nome: "deyvid marques", Idade: 23}
-	p2 := Cliente{Nome: "dvd marveira", Idade: 23}
-	p1.Apresentar()
-	p2.Apresentar()
+	var p1 Cliente = Cliente{Nome: "deyvid marques"}
+	var p2 Cliente = Cliente{Nome: "dvd marveira"}
+	fmt.Println(p1.Nome)
+	var p3 *Cliente = &p1 // definiu p3 como ponteiro de p1 passando como referência apontando o endereço.
+
+	fmt.Println(&p1.Nome)
+	p3.Nome = "David" // mudou o valor original de p1
+	fmt.Println(p1.Nome)
+	fmt.Println(p2.Idade)
+	fmt.Println(&p3.Nome)
 
 	multiplicacao()
 }
